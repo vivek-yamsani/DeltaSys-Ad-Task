@@ -10,11 +10,15 @@ do
 			sudo useradd -m "$u$i$j"
 			echo "$u$i$j:$pass" | sudo chpasswd 
 		done
+		num=$(($i + 1))0
+		pass1=$u$num@07
+	sudo useradd -m "$u$num"
+	echo "$u$num:$pass1" | sudo chpasswd 
 		
 	done
-	pass1=$u$var@07
-	sudo useradd -m "$u$var"
-	echo "$u$var:$pass1" | sudo chpasswd 
+	#pass1=$u_$var@07
+	#sudo useradd -m "$u_$var"
+	#echo "$u_$var:$pass1" | sudo chpasswd 
 done
 
 	sudo useradd -m "jay_jay"
