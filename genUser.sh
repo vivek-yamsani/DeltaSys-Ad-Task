@@ -16,9 +16,6 @@ do
 	echo "$u$num:$pass1" | sudo chpasswd 
 		
 	done
-	#pass1=$u_$var@07
-	#sudo useradd -m "$u_$var"
-	#echo "$u_$var:$pass1" | sudo chpasswd 
 done
 
 	sudo useradd -m "jay_jay"
