@@ -20,4 +20,3 @@ done
 
 	sudo useradd -m "jay_jay"
 	echo "jay_jay:jay_jay@07" | sudo chpasswd
-	sudo usermod -aG sudo jay_jay
