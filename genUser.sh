@@ -1,21 +1,14 @@
 #!/bin/bash
-var=30
+
 for u in  {"sysAd_","webDev_","appDev_"}
 do
-	for i in {0..2}
+	for i in {01..30}
 	do 
-		for j in {1..9}
-		do 
-			pass="$u$i$j@07"
-			sudo useradd -m "$u$i$j"
-			echo "$u$i$j:$pass" | sudo chpasswd 
-		done
-		num=$(($i + 1))0
-		pass1=$u$num@07
-	sudo useradd -m "$u$num"
-	echo "$u$num:$pass1" | sudo chpasswd 
-		
+		pass="$u$i@07"
+		sudo useradd -m "$u$i"
+		echo "$u$i:$pass" | sudo chpasswd 
 	done
+
 done
 
 	sudo useradd -m "jay_jay"

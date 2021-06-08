@@ -42,16 +42,16 @@ sudo groupadd "$u$v2"
 	do
 		sudo setfacl -m g:"$u$v2":r-- /home/"$u$x"
 		sudo setfacl -m u:jay_jay:r-- /home/"$u$x"
+		sudo setfacl -m g:"$u$v1":--- /home/"$u$x"	
 	done
 	
 	#giving permissions to 21-30 home dir for jay
 	for x in {21..30}
 	do
 		sudo setfacl -m u:jay_jay:r-- /home/"$u$x"
+		sudo setfacl -m g:"$u$v2":--- /home/"$u$x"
 	done
 	
-	sudo setfacl -m g:"$u$v1":--- /home/"$u"{11..20}	
-	sudo setfacl -m g:"$u$v2":--- /home/"$u"{21..30}
 	sudo chmod o=--- /home/s* /home/w* /home/a* /home/jay_jay
 done
 
