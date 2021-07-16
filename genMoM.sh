@@ -4,9 +4,10 @@ awk -F "[ ,]" '{if(!a[$3]++) print $3}' attendance.log > dates.txt
 
 while read date
 do
-    lat=$(cat attendance.log |grep "$date" | awk -F "[ _]" '{if($2<=10) print $0}' | tail -n 1 | awk '{print $1}')
+    lat="$(grep  "$date" "attendance.log" | awk -F "[ _]" '{if($2<=10) print $0}' | tail -n 1 | awk '{print $1}')"
+    if [ -n "$lat" ]
+    then 
+        echo "this is the MoM of the meet dated on $date" > /home/${date}_mom
+    fi
 
-    cd "/home/$lat"
-
-    echo "this is the MoM of the meet dated on $date" > ${date}_mom
-done < dates.txt
+done < dates.txt 
