@@ -7,7 +7,7 @@ do
     lat="$(grep  "$date" "attendance.log" | awk -F "[ _]" '{if($2<=10) print $0}' | tail -n 1 | awk '{print $1}')"
     if [ -n "$lat" ]
     then 
-        echo "this is the MoM of the meet dated on $date" > /home/${date}_mom
+        echo "this is the MoM of the meet dated on $date" > /home/$lat/${date}_mom
     fi
 
 done < dates.txt 
